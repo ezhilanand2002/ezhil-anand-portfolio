@@ -163,7 +163,7 @@ export const projectsData = [
       "Secure MySQL relational schema for donations and user audit logs",
       "Maven enterprise build lifecycle integration"
     ],
-    github: "https://github.com/ezhilanand2002/volun-track",
+    github: "https://github.com/ezhilanand2002/voluntrack-springboot",
     liveDemo: "https://volun-track-demo.vercel.app",
     status: "Completed",
     difficulty: "Advanced Enterprise",
@@ -202,7 +202,7 @@ public class VolunteerController {
       "Comprehensive donation logs & eligibility check tracking",
       "Automated stock alert triggers when threshold falls low"
     ],
-    github: "https://github.com/ezhilanand2002/blood-donation-system",
+    github: "https://github.com/ezhilanand2002/Blood-donation",
     liveDemo: "https://blood-donation-system-demo.vercel.app",
     status: "Completed",
     difficulty: "Intermediate",
@@ -239,12 +239,12 @@ END;`
       "Interactive Python Flask web interface for instant weather inference",
       "Real-time prediction charts and meteorological parameter visualizers"
     ],
-    github: "https://github.com/ezhilanand2002/weather-forecasting-ml",
+    github: "https://github.com/ezhilanand2002/weather_prediction",
     liveDemo: "https://weather-ml-demo.vercel.app",
     status: "Completed",
     difficulty: "Advanced ML",
     codeSnippet: `import pandas as pd
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection.train_test_split import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score
