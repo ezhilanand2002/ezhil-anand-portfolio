@@ -56,9 +56,7 @@ export const Hero = () => {
 
   const handleEmailAction = (e) => {
     e.preventDefault();
-    // 1. Smoothly scroll to contact section
     scrollToSection("contact");
-    // 2. Open mailto client in parallel
     setTimeout(() => {
       window.location.href = "mailto:ezhilanandv369@gmail.com";
     }, 300);
@@ -77,17 +75,6 @@ export const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column - Main Details */}
           <div className="lg:col-span-7 space-y-6 text-left">
-            {/* Status Badge */}
-            <div className="inline-flex items-center gap-2.5 bg-[#0F111A]/90 border border-cyan-500/30 px-3.5 py-1.5 rounded-full backdrop-blur-md shadow-[0_0_20px_rgba(0,242,254,0.15)]">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-500" />
-              </span>
-              <span className="text-xs font-mono text-cyan-300 font-semibold tracking-wide uppercase">
-                Open to Software Engineering Opportunities
-              </span>
-            </div>
-
             {/* Main Name Heading */}
             <div className="space-y-2">
               <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-none">
