@@ -1,6 +1,11 @@
 import profilePhotoAsset from "../assets/ezhil_profile.jpg";
 import resumePdfAsset from "../assets/Ezhil_Anand_V_Resume.pdf";
 
+import uipathCertImg from "../assets/certificates/uipath_certificate.jpg";
+import oracleAiCertImg from "../assets/certificates/oracle_ai_certificate.png";
+import nasscomGoldCertImg from "../assets/certificates/nasscom_gold_certificate.png";
+import nptelHciCertImg from "../assets/certificates/nptel_hci_certificate.png";
+
 export const personalInfo = {
   name: "EZHIL ANAND V",
   title: "Computer Science & Engineering Student",
@@ -312,61 +317,71 @@ export const certificationsData = [
     id: "uipath-automation",
     title: "UiPath Certified Professional Automation Developer Associate Certification",
     issuer: "UiPath",
-    issueDate: "2025",
-    credentialId: "UIPATH-DEV-2025-99",
+    issueDate: "January 27, 2026",
+    credentialId: "004757",
     category: "RPA & Automation",
     color: "from-orange-500 to-amber-500",
-    badge: "Verified Certification",
+    badge: "Official Certificate",
     description: "Validates core competence in robotic process automation, UiPath Studio workflows, selector debugging, and automated business flow orchestration.",
-    verifyUrl: "https://uipath.com/verify"
+    image: uipathCertImg,
+    downloadUrl: "/certificates/uipath_certificate.jpg",
+    fileName: "UiPath_Automation_Developer_Certificate.jpg"
   },
   {
     id: "oracle-cloud-ai",
     title: "Certified-Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate",
-    issuer: "Oracle",
-    issueDate: "2025",
-    credentialId: "OCI-AI-2025-FOUNDATIONS",
+    issuer: "Oracle University",
+    issueDate: "November 16, 2025",
+    credentialId: "103211960OCI25AICFA",
     category: "Artificial Intelligence & Cloud",
     color: "from-red-600 to-orange-600",
     badge: "Oracle Certified",
-    description: "Certifies foundational expertise in Oracle Cloud Infrastructure (OCI) AI services, Machine Learning workloads, Generative AI models, and cloud vision/NLP APIs.",
-    verifyUrl: "https://education.oracle.com/verify"
+    description: "Certifies foundational expertise in Oracle Cloud Infrastructure (OCI) AI services, Machine Learning workloads, Generative AI models, and cloud vision/NLP APIs. Valid until Nov 16, 2027.",
+    image: oracleAiCertImg,
+    downloadUrl: "/certificates/oracle_ai_certificate.png",
+    fileName: "Oracle_Cloud_AI_Foundations_Certificate.png"
   },
   {
     id: "nasscom-gold",
     title: "NASSCOM Digital Engineering Certification – Gold",
-    issuer: "NASSCOM FutureSkills",
-    issueDate: "2025",
-    credentialId: "NASSCOM-GOLD-DE-2025",
+    issuer: "NASSCOM FutureSkills Prime",
+    issueDate: "April 16, 2026",
+    credentialId: "FSP/2026/4/10284839",
     category: "Software Engineering",
     color: "from-yellow-400 to-amber-600",
-    badge: "Gold Grade",
-    description: "Highest level gold certification awarded for excellence in software engineering principles, web stack fundamentals, and digital solution delivery.",
-    verifyUrl: "https://futureskillsprime.in/verify"
+    badge: "Gold Grade (70%+)",
+    description: "Highest level gold category certification awarded for excellence in digital engineering principles, web stack fundamentals, and digital solution delivery.",
+    image: nasscomGoldCertImg,
+    downloadUrl: "/certificates/nasscom_gold_certificate.png",
+    fileName: "NASSCOM_Digital_Engineering_Gold_Certificate.png"
   },
   {
     id: "nptel-hci",
-    title: "NPTEL- Human Computer Interaction",
-    issuer: "NPTEL / IIT",
-    issueDate: "2024",
-    credentialId: "NPTEL-HCI-2024-PASS",
+    title: "NPTEL - Human Computer Interaction (Elite Grade)",
+    issuer: "NPTEL / IIT Madras (Govt. of India)",
+    issueDate: "Jan-Apr 2026",
+    credentialId: "NPTEL26CS70S264900368",
     category: "UI/UX & Cognitive Engineering",
     color: "from-cyan-500 to-blue-600",
-    badge: "IIT Course",
-    description: "Completed rigorous academic course on user interface principles, usability testing, cognitive ergonomics, interactive prototyping, and user-centric design.",
-    verifyUrl: "https://nptel.ac.in/verify"
+    badge: "Elite Grade (83%)",
+    description: "Awarded Elite grade with 83% consolidated score (Assignments: 25/25, Exam: 57.5/75) for completing 12-week course on user interface design & usability engineering.",
+    image: nptelHciCertImg,
+    downloadUrl: "/certificates/nptel_hci_certificate.png",
+    fileName: "NPTEL_Human_Computer_Interaction_Elite_Certificate.png"
   },
   {
     id: "salesforce-agentblazer",
-    title: "Sales Force - Agentblazer Champion",
-    issuer: "Salesforce",
+    title: "Salesforce - Agentblazer Champion",
+    issuer: "Salesforce Trailhead",
     issueDate: "2025",
     credentialId: "SF-AGENTBLAZER-CHAMP",
     category: "AI Agents & CRM",
     color: "from-blue-500 to-indigo-600",
     badge: "Champion",
     description: "Recognized as Agentblazer Champion for mastering Salesforce autonomous AI agents, workflow automation, and CRM intelligence integration.",
-    verifyUrl: "https://trailhead.salesforce.com/verify"
+    image: null,
+    downloadUrl: null,
+    fileName: null
   }
 ];
 
