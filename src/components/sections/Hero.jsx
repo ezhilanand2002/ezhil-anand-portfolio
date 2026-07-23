@@ -47,6 +47,23 @@ export const Hero = () => {
     return () => clearTimeout(timer);
   }, [currentText, isDeleting, roleIndex, roles]);
 
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleEmailAction = (e) => {
+    e.preventDefault();
+    // 1. Smoothly scroll to contact section
+    scrollToSection("contact");
+    // 2. Open mailto client in parallel
+    setTimeout(() => {
+      window.location.href = "mailto:ezhilanandv369@gmail.com";
+    }, 300);
+  };
+
   return (
     <section
       id="hero"
@@ -111,16 +128,21 @@ export const Hero = () => {
               {/* View Resume Navigation Button */}
               <a
                 href="#resume"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("resume");
+                }}
                 className="flex items-center gap-2 bg-[#0F111A] hover:bg-slate-800 text-slate-200 hover:text-cyan-400 px-4 py-3 rounded-xl border border-slate-800 hover:border-cyan-500/40 transition-all duration-200"
               >
                 <Eye className="w-4 h-4 text-cyan-400" /> View Resume
               </a>
 
-              {/* Direct Mailto Email Me Button */}
+              {/* Email Me Button (Navigates to #contact & triggers mailto) */}
               <a
                 href="mailto:ezhilanandv369@gmail.com"
+                onClick={handleEmailAction}
                 className="flex items-center gap-2 bg-[#0F111A] hover:bg-cyan-500/10 text-cyan-400 hover:text-cyan-300 font-semibold px-5 py-3 rounded-xl border border-cyan-500/40 hover:border-cyan-400 shadow-[0_0_15px_rgba(0,242,254,0.15)] transition-all duration-300 hover:scale-105"
-                title="Send Email"
+                title="Email Me / Navigate to Contact Form"
               >
                 <Mail className="w-4 h-4 text-cyan-400" />
                 <span>Email Me</span>
@@ -157,16 +179,17 @@ export const Hero = () => {
               </a>
             </div>
 
-            {/* Direct Email Address Display Box with Simple Mailto */}
+            {/* Direct Email Address Display Box */}
             <div className="pt-2">
               <a
                 href="mailto:ezhilanandv369@gmail.com"
+                onClick={handleEmailAction}
                 className="inline-flex items-center gap-2 text-xs font-mono text-slate-300 hover:text-cyan-300 bg-[#0F111A]/80 border border-slate-800 hover:border-cyan-500/40 px-3.5 py-2 rounded-xl transition-colors group cursor-pointer"
               >
                 <Mail className="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform" />
                 <span>{personalInfo.email}</span>
                 <span className="text-[10px] text-cyan-500 bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/20 ml-2">
-                  Click to email
+                  Click to email / contact
                 </span>
               </a>
             </div>
