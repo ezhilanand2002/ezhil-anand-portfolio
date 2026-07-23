@@ -14,7 +14,7 @@ export const personalInfo = {
   ],
   bio: "Motivated and detail-oriented Computer Science student with proficiency in Java, C, and Web Development, alongside foundational knowledge in Artificial Intelligence concepts. Passionate about building efficient, enterprise-grade software solutions, applying AI-driven approaches, and exploring emerging technologies.",
   email: "ezhilanandv369@gmail.com",
-  emailMailto: "mailto:ezhilanandv369@gmail.com?subject=Portfolio%20Inquiry&body=Hello,%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you.",
+  emailMailto: "mailto:ezhilanandv369@gmail.com",
   phone: "+91 7904372312",
   phoneTel: "tel:+917904372312",
   location: "Tirupattur, Tamil Nadu, India",
@@ -244,7 +244,7 @@ END;`
     status: "Completed",
     difficulty: "Advanced ML",
     codeSnippet: `import pandas as pd
-from sklearn.model_selection.train_test_split import train_test_split
+from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score

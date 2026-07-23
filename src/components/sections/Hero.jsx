@@ -47,29 +47,6 @@ export const Hero = () => {
     return () => clearTimeout(timer);
   }, [currentText, isDeleting, roleIndex, roles]);
 
-  // Handler for Email Me / Email Box click (opens mailto AND scrolls to #contact)
-  const handleEmailClick = (e) => {
-    e.preventDefault();
-    window.open(personalInfo.emailMailto, "_self");
-    setTimeout(() => {
-      const contactEl = document.getElementById("contact");
-      if (contactEl) {
-        contactEl.scrollIntoView({ behavior: "smooth" });
-      }
-    }, 100);
-  };
-
-  // Handler for Download Resume click (downloads PDF AND scrolls to #resume)
-  const handleResumeClick = (e) => {
-    // Allows default download behavior
-    setTimeout(() => {
-      const resumeEl = document.getElementById("resume");
-      if (resumeEl) {
-        resumeEl.scrollIntoView({ behavior: "smooth" });
-      }
-    }, 200);
-  };
-
   return (
     <section
       id="hero"
@@ -126,7 +103,6 @@ export const Hero = () => {
               <a
                 href={personalInfo.resumePdf}
                 download="Ezhil_Anand_V_Resume.pdf"
-                onClick={handleResumeClick}
                 className="flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-slate-950 font-bold px-6 py-3 rounded-xl shadow-[0_0_30px_rgba(0,242,254,0.3)] transition-all duration-300 hover:scale-105"
               >
                 <Download className="w-4 h-4" /> Download Resume
@@ -140,12 +116,11 @@ export const Hero = () => {
                 <Eye className="w-4 h-4 text-cyan-400" /> View Resume
               </a>
 
-              {/* Email Me Button (Opens Mail Client & Navigates to Contact) */}
+              {/* Direct Mailto Email Me Button */}
               <a
-                href={personalInfo.emailMailto}
-                onClick={handleEmailClick}
+                href="mailto:ezhilanandv369@gmail.com"
                 className="flex items-center gap-2 bg-[#0F111A] hover:bg-cyan-500/10 text-cyan-400 hover:text-cyan-300 font-semibold px-5 py-3 rounded-xl border border-cyan-500/40 hover:border-cyan-400 shadow-[0_0_15px_rgba(0,242,254,0.15)] transition-all duration-300 hover:scale-105"
-                title="Send Inquiry Email or Navigate to Contact Form"
+                title="Send Email"
               >
                 <Mail className="w-4 h-4 text-cyan-400" />
                 <span>Email Me</span>
@@ -182,17 +157,16 @@ export const Hero = () => {
               </a>
             </div>
 
-            {/* Direct Email Address Display Box with Mailto & Contact Navigation */}
+            {/* Direct Email Address Display Box with Simple Mailto */}
             <div className="pt-2">
               <a
-                href={personalInfo.emailMailto}
-                onClick={handleEmailClick}
+                href="mailto:ezhilanandv369@gmail.com"
                 className="inline-flex items-center gap-2 text-xs font-mono text-slate-300 hover:text-cyan-300 bg-[#0F111A]/80 border border-slate-800 hover:border-cyan-500/40 px-3.5 py-2 rounded-xl transition-colors group cursor-pointer"
               >
                 <Mail className="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform" />
                 <span>{personalInfo.email}</span>
                 <span className="text-[10px] text-cyan-500 bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/20 ml-2">
-                  Click to email / contact
+                  Click to email
                 </span>
               </a>
             </div>
