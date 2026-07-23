@@ -2,18 +2,17 @@ import profilePhotoAsset from "../assets/ezhil_profile.jpg";
 import resumePdfAsset from "../assets/Ezhil_Anand_V_Resume.pdf";
 
 export const personalInfo = {
-  name: "Ezhil Anand V",
+  name: "EZHIL ANAND V",
   title: "Computer Science & Engineering Student",
   roles: [
     "Full Stack Developer",
-    "Java Developer",
-    "Spring Boot Developer",
-    "React Developer",
+    "Java & Spring Boot Developer",
+    "Node.js & Express.js Developer",
     "AI & ML Enthusiast",
     "Problem Solver",
     "Competitive Programmer"
   ],
-  bio: "Motivated and detail-oriented Computer Science student with proficiency in Java, C, and Web Development, alongside foundational knowledge in Artificial Intelligence. Passionate about building scalable, high-performance applications, exploring emerging tech, and applying AI-driven solutions to solve real-world problems.",
+  bio: "Motivated and detail-oriented Computer Science student with proficiency in Java, C, and Web Development, alongside foundational knowledge in Artificial Intelligence concepts. Passionate about building efficient, enterprise-grade software solutions, applying AI-driven approaches, and exploring emerging technologies.",
   email: "ezhilanandv369@gmail.com",
   emailMailto: "mailto:ezhilanandv369@gmail.com?subject=Portfolio%20Inquiry&body=Hello,%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you.",
   phone: "+91 7904372312",
@@ -25,6 +24,7 @@ export const personalInfo = {
   graduationYear: "2023 - 2027",
   profilePhoto: profilePhotoAsset,
   resumePdf: resumePdfAsset,
+  languagesSpoken: ["Hindi", "Tamil", "English"],
   socials: {
     github: "https://github.com/ezhilanand2002",
     linkedin: "https://www.linkedin.com/in/ezhilanandv/",
@@ -51,7 +51,7 @@ export const educationTimeline = [
     badge: "Current Degree",
     highlights: [
       "Department topper candidate with 9.2 CGPA overall score",
-      "Specializing in Data Structures, Algorithms, Full Stack Web Development, & AI Foundations",
+      "Specializing in Data Structures, Algorithms, Spring Boot Full Stack, Node.js & Machine Learning",
       "Active team lead in college hackathons and technical project symposiums"
     ]
   },
@@ -86,61 +86,60 @@ export const skillsData = [
     category: "Programming Languages",
     icon: "Code2",
     skills: [
-      { name: "Java", level: 90, icon: "Coffee", tag: "Primary" },
-      { name: "Python", level: 85, icon: "FileCode", tag: "AI/NLP" },
-      { name: "C Language", level: 80, icon: "Cpu", tag: "Core" },
-      { name: "JavaScript", level: 88, icon: "Terminal", tag: "Web" },
-      { name: "SQL", level: 85, icon: "Database", tag: "Queries" }
+      { name: "Java", level: 92, icon: "Coffee", tag: "Core & Enterprise" },
+      { name: "Python", level: 88, icon: "FileCode", tag: "AI / ML / Data Science" },
+      { name: "C Language", level: 82, icon: "Cpu", tag: "Core Fundamentals" },
+      { name: "JavaScript (ES6+)", level: 88, icon: "Terminal", tag: "Full Stack" },
+      { name: "SQL", level: 85, icon: "Database", tag: "Relational Queries" }
     ]
   },
   {
     category: "Frontend Development",
     icon: "Layout",
     skills: [
-      { name: "React.js", level: 85, icon: "Atom", tag: "Framework" },
-      { name: "HTML5", level: 95, icon: "FileText", tag: "Markup" },
-      { name: "CSS3 / Tailwind", level: 90, icon: "Palette", tag: "Styling" },
-      { name: "JavaScript (ES6+)", level: 88, icon: "Code", tag: "Logic" },
-      { name: "Bootstrap", level: 82, icon: "Layers", tag: "UI Grid" }
+      { name: "HTML5", level: 95, icon: "FileText", tag: "Markup Structure" },
+      { name: "CSS3 / Tailwind", level: 90, icon: "Palette", tag: "Modern Styling" },
+      { name: "JavaScript", level: 88, icon: "Code", tag: "Logic & DOM" },
+      { name: "Bootstrap", level: 85, icon: "Layers", tag: "Responsive Grid" }
     ]
   },
   {
-    category: "Backend & Databases",
+    category: "Backend Frameworks",
     icon: "Server",
     skills: [
-      { name: "Spring Boot", level: 80, icon: "ShieldCheck", tag: "Backend" },
-      { name: "MySQL", level: 85, icon: "Database", tag: "RDBMS" },
-      { name: "Node.js", level: 75, icon: "Server", tag: "Runtime" },
-      { name: "REST APIs", level: 88, icon: "Network", tag: "Architecture" }
+      { name: "Spring Boot", level: 88, icon: "ShieldCheck", tag: "Java Enterprise API" },
+      { name: "Node.js", level: 80, icon: "Server", tag: "JS Runtime" },
+      { name: "Express.js", level: 80, icon: "Network", tag: "REST Middleware" },
+      { name: "JPA / Hibernate", level: 85, icon: "Database", tag: "ORM Persistence" }
     ]
   },
   {
-    category: "Developer Tools & Platforms",
+    category: "Databases & Tools",
     icon: "Wrench",
     skills: [
-      { name: "Git & GitHub", level: 90, icon: "GitBranch", tag: "VCS" },
-      { name: "VS Code", level: 95, icon: "Monitor", tag: "IDE" },
-      { name: "Postman", level: 85, icon: "Send", tag: "API Testing" },
-      { name: "IntelliJ IDEA", level: 82, icon: "Box", tag: "Java IDE" }
+      { name: "MySQL / Oracle MySQL", level: 88, icon: "Database", tag: "RDBMS" },
+      { name: "GitHub", level: 92, icon: "GitBranch", tag: "Version Control" },
+      { name: "VS Code", level: 95, icon: "Monitor", tag: "IDE Studio" },
+      { name: "Maven", level: 85, icon: "Box", tag: "Build Tool" }
     ]
   },
   {
-    category: "AI & Productivity Tools",
+    category: "AI & Machine Learning",
     icon: "Sparkles",
     skills: [
-      { name: "ChatGPT", level: 92, icon: "Bot", tag: "LLM" },
-      { name: "Claude AI", level: 90, icon: "MessageSquare", tag: "Reasoning" },
-      { name: "GitHub Copilot", level: 88, icon: "Zap", tag: "AI Coding" },
-      { name: "NLTK & Scikit-Learn", level: 80, icon: "Brain", tag: "ML/NLP" }
+      { name: "Scikit-Learn", level: 85, icon: "Brain", tag: "ML Classifiers" },
+      { name: "Pandas & NumPy", level: 85, icon: "Layers", tag: "Data Analysis" },
+      { name: "Decision Trees & SVM", level: 82, icon: "Zap", tag: "Predictive Models" },
+      { name: "Python Flask", level: 88, icon: "Server", tag: "ML Web Serving" }
     ]
   },
   {
     category: "Professional Soft Skills",
     icon: "UserCheck",
     skills: [
-      { name: "Active Listener", level: 95, icon: "Headphones", tag: "Soft Skill" },
-      { name: "Quick Learner", level: 95, icon: "Zap", tag: "Growth" },
-      { name: "Adaptable & Flexible", level: 90, icon: "RefreshCw", tag: "Agile" },
+      { name: "Active Listener", level: 95, icon: "Headphones", tag: "Communication" },
+      { name: "Quick Learner", level: 95, icon: "Zap", tag: "Growth Mindset" },
+      { name: "Adaptable & Flexible", level: 90, icon: "RefreshCw", tag: "Agile Ready" },
       { name: "Proactive Thinker", level: 92, icon: "Lightbulb", tag: "Problem Solving" }
     ]
   }
@@ -148,47 +147,52 @@ export const skillsData = [
 
 export const projectsData = [
   {
-    id: "smart-nlp-chatbot",
-    title: "Smart Chatbot Using Natural Language Processing",
-    subtitle: "AI-Powered Conversational Bot with Intent Recognition",
-    category: "AI & Web App",
-    image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=1200&auto=format&fit=crop",
-    shortDescription: "Designed and implemented a web-based AI chatbot using Python Flask, NLTK, and Scikit-learn to handle context-aware domain queries, calculations, and date/time support.",
-    fullDescription: "An intelligent conversational chatbot built to deliver domain-specific information, automate answers to common user queries, compute basic calculations, and provide real-time date/time updates through an intuitive web interface. Built leveraging Natural Language Toolkit (NLTK) tokenization, TF-IDF vectorization, and scikit-learn intent classification.",
-    technologies: ["Python", "Flask", "NLTK", "Scikit-Learn", "HTML5", "CSS3", "JavaScript"],
-    architecture: ["User Interface (HTML/CSS/JS)", "Flask REST Endpoints", "NLTK Tokenizer & Stemmer", "Scikit-Learn Classifier", "JSON Intent Knowledge Base"],
+    id: "volun-track",
+    title: "VolunTrack – Enterprise Volunteer & Fundraising Platform",
+    subtitle: "Secure Multi-Tier Web Application with Spring Boot & JWT",
+    category: "Enterprise Web & Backend",
+    image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=1200&auto=format&fit=crop",
+    shortDescription: "Developed a secure, multi-tier web application to coordinate volunteer activities and charity donations. Engineered a Spring Boot REST API integrated with Spring Security and JWT for role-based authorization.",
+    fullDescription: "VolunTrack is a comprehensive enterprise volunteer and fundraising platform designed to streamline community activities, charity campaign management, and donor contributions. Features a modular Spring Boot REST API architecture with Spring Security & JWT authentication, Spring Data JPA relational mapping, dynamic admin dashboard statistics, event scheduling, and real-time fundraising progress tracking.",
+    technologies: ["Java (Spring Boot)", "JPA/Hibernate", "MySQL", "Bootstrap", "JavaScript", "Maven", "Spring Security", "JWT"],
+    architecture: ["Bootstrap/JS Frontend", "Spring Security & JWT Filter", "Spring Boot REST Controller", "Spring Data JPA Repository Layer", "MySQL Relational Schema"],
     features: [
-      "Context-aware domain-specific query recognition",
-      "Natural Language Understanding (NLU) with intent classification",
-      "Built-in arithmetic evaluation engine",
-      "Real-time date and time response generator",
-      "Clean glassmorphism interactive chat window"
+      "Role-based access control (Admin, Organizer, Volunteer, Donor) with JWT tokens",
+      "Dynamic dashboard stats tracking live fundraising campaign progress",
+      "Volunteer event scheduling, registration, and attendance tracking",
+      "Secure MySQL relational schema for donations and user audit logs",
+      "Maven enterprise build lifecycle integration"
     ],
-    github: "https://github.com/ezhilanand2002/smart-nlp-chatbot",
-    liveDemo: "https://smart-nlp-chatbot-demo.vercel.app",
+    github: "https://github.com/ezhilanand2002/volun-track",
+    liveDemo: "https://volun-track-demo.vercel.app",
     status: "Completed",
-    difficulty: "Advanced",
-    codeSnippet: `from flask import Flask, request, jsonify
-import nltk
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.naive_bayes import MultinomialNB
+    difficulty: "Advanced Enterprise",
+    codeSnippet: `@RestController
+@RequestMapping("/api/v1/volunteers")
+@CrossOrigin(origins = "*")
+public class VolunteerController {
 
-app = Flask(__name__)
+    @Autowired
+    private VolunteerService volunteerService;
 
-@app.route('/api/chat', methods=['POST'])
-def chat():
-    user_query = request.json.get('message')
-    response = process_nlp_intent(user_query)
-    return jsonify({'reply': response})`
+    @PostMapping("/events/{eventId}/register")
+    @PreAuthorize("hasRole('VOLUNTEER')")
+    public ResponseEntity<RegistrationResponse> registerForEvent(
+            @PathVariable Long eventId,
+            @AuthenticationPrincipal UserDetails userDetails) {
+        RegistrationResponse response = volunteerService.registerVolunteer(eventId, userDetails.getUsername());
+        return ResponseEntity.ok(response);
+    }
+}`
   },
   {
     id: "blood-donation-system",
-    title: "Blood Donation Management System",
-    subtitle: "Database-Driven Medical Supply Chain System",
-    category: "Database & Backend",
+    title: "Blood Donation System",
+    subtitle: "Database-Driven Medical Supply Chain Solution",
+    category: "Database & Supply Chain",
     image: "https://images.unsplash.com/photo-1615461066841-6116e61058f4?q=80&w=1200&auto=format&fit=crop",
-    shortDescription: "Developed a database-driven system using Oracle MySQL to manage donor registrations, real-time blood bank inventory, hospital emergency requests, and donation history.",
-    fullDescription: "A robust enterprise database solution designed to bridge the gap between voluntary blood donors, blood banks, and hospitals during emergencies. Features complex SQL queries, relational table normalizing, stored procedures for stock tracking, and automated matching between request requirements and blood groups.",
+    shortDescription: "Developed a database-driven application using Oracle MySQL to manage donor registrations, real-time blood bank stock, hospital emergency requests, and donation history.",
+    fullDescription: "A robust database-driven solution designed to streamline the blood donation process during medical emergencies. Connects voluntary blood donors, hospital inventory systems, and blood bank branches through efficient normalized relational tables, automated stock triggers, and donation history logging.",
     technologies: ["Oracle MySQL", "SQL Triggers", "Relational Database Design", "HTML/CSS Dashboard"],
     architecture: ["Relational Schema (3NF)", "Stored Procedures & Views", "Transaction Management", "Admin & Donor Portals"],
     features: [
@@ -219,41 +223,42 @@ BEGIN
 END;`
   },
   {
-    id: "aicte-counselling-system",
-    title: "AICTE Counselling Management System",
-    subtitle: "Automated Data & Compliance Management Solution",
-    category: "Desktop & Data System",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop",
-    shortDescription: "Created a Python-based GUI system for AICTE operations to handle institute details, student records, faculty data, and compliance tracking via persistent file handling.",
-    fullDescription: "A specialized administration desktop system built to streamline the complex counseling, record management, and compliance verification operations for institutions accredited under AICTE (All India Council for Technical Education). Leverages Tkinter GUI and structured file handling for rapid local record lookup.",
-    technologies: ["Python", "Tkinter", "File Handling", "CSV/JSON Data Storage", "GUI Design"],
-    architecture: ["Tkinter Desktop Interface", "Validation & Data Parser", "Persistent File I/O Engine", "Report & Certificate Generator"],
+    id: "weather-forecasting-ml",
+    title: "Weather Forecasting Using Machine Learning",
+    subtitle: "Web-Based Predictive Weather Intelligence System",
+    category: "AI & Machine Learning",
+    image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?q=80&w=1200&auto=format&fit=crop",
+    shortDescription: "Designed and developed a web application using Machine Learning (Decision Tree & SVM) to predict weather conditions from meteorological data, served via an interactive Flask web interface.",
+    fullDescription: "A predictive weather forecasting system built using machine learning techniques on historical meteorological datasets. Implemented comprehensive data preprocessing, feature scaling, model training, and performance evaluation comparing Decision Tree and Support Vector Machine (SVM) algorithms. Features a responsive Python Flask web application for real-time weather predictions.",
+    technologies: ["Python (Flask)", "HTML", "CSS", "JavaScript", "Scikit-Learn", "Pandas", "NumPy", "Decision Tree", "SVM"],
+    architecture: ["Meteorological Data Pipeline", "Pandas & NumPy Preprocessor", "Scikit-Learn Classifier (Decision Tree & SVM)", "Flask API Backend", "Interactive Web Frontend"],
     features: [
-      "Institution registration & AICTE code verification",
-      "Faculty profiles & qualification matrix storage",
-      "Student seat allocation & counseling queue processing",
-      "Automated compliance status report compilation",
-      "Fast offline file-based storage with search & filter"
+      "Meteorological data preprocessing, missing value handling, and feature scaling",
+      "Supervised ML model training with Decision Tree and Support Vector Machine (SVM)",
+      "Model accuracy evaluation and performance metric comparisons",
+      "Interactive Python Flask web interface for instant weather inference",
+      "Real-time prediction charts and meteorological parameter visualizers"
     ],
-    github: "https://github.com/ezhilanand2002/aicte-counselling-system",
-    liveDemo: "https://aicte-system-demo.vercel.app",
+    github: "https://github.com/ezhilanand2002/weather-forecasting-ml",
+    liveDemo: "https://weather-ml-demo.vercel.app",
     status: "Completed",
-    difficulty: "Intermediate",
-    codeSnippet: `import tkinter as tk
-from tkinter import messagebox
-import json
+    difficulty: "Advanced ML",
+    codeSnippet: `import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.svm import SVC
+from sklearn.metrics import accuracy_score
 
-class AICTECounselingApp:
-    def __init__(self, root):
-        self.root = root
-        self.root.title("AICTE Counselling Management System")
-        self.create_widgets()
+# Preprocessing & Model Evaluation
+X_train, X_test, y_train, y_test = train_test_split(features, target, test_size=0.2, random_state=42)
 
-    def save_institution_record(self, data):
-        with open("institutions.json", "a") as f:
-            json.dump(data, f)
-            f.write("\\n")
-        messagebox.showinfo("Success", "Record Saved Successfully")`
+dt_model = DecisionTreeClassifier()
+dt_model.fit(X_train, y_train)
+dt_accuracy = accuracy_score(y_test, dt_model.predict(X_test))
+
+svm_model = SVC(kernel='rbf')
+svm_model.fit(X_train, y_train)
+svm_accuracy = accuracy_score(y_test, svm_model.predict(X_test))`
   }
 ];
 
@@ -305,7 +310,7 @@ export const experienceTimeline = [
 export const certificationsData = [
   {
     id: "uipath-automation",
-    title: "UiPath Certified Professional Automation Developer Associate",
+    title: "UiPath Certified Professional Automation Developer Associate Certification",
     issuer: "UiPath",
     issueDate: "2025",
     credentialId: "UIPATH-DEV-2025-99",
@@ -341,7 +346,7 @@ export const certificationsData = [
   },
   {
     id: "nptel-hci",
-    title: "NPTEL - Human Computer Interaction",
+    title: "NPTEL- Human Computer Interaction",
     issuer: "NPTEL / IIT",
     issueDate: "2024",
     credentialId: "NPTEL-HCI-2024-PASS",
@@ -353,7 +358,7 @@ export const certificationsData = [
   },
   {
     id: "salesforce-agentblazer",
-    title: "Salesforce - Agentblazer Champion",
+    title: "Sales Force - Agentblazer Champion",
     issuer: "Salesforce",
     issueDate: "2025",
     credentialId: "SF-AGENTBLAZER-CHAMP",
@@ -367,48 +372,39 @@ export const certificationsData = [
 
 export const blogPosts = [
   {
-    id: "building-nlp-chatbots-flask",
-    title: "Building Intelligent NLP Chatbots with Flask & Scikit-Learn",
-    excerpt: "A deep dive into tokenization, TF-IDF vectorization, and intent classification to build context-aware conversational bots from scratch.",
-    category: "Artificial Intelligence",
-    readTime: "6 min read",
+    id: "spring-boot-voluntrack-architecture",
+    title: "Building Enterprise Microservices with Spring Boot, Spring Security & JWT",
+    excerpt: "A comprehensive design pattern breakdown of role-based authorization, JPA relational persistence, and Maven build pipelines.",
+    category: "Backend Architecture",
+    readTime: "7 min read",
     date: "July 2025",
-    tags: ["Python", "NLP", "Flask", "Scikit-Learn"],
+    tags: ["Java", "Spring Boot", "JWT", "MySQL"],
     content: `
-### Introduction to NLP Chatbots
-Conversational interfaces have transformed how users interact with web software. In this technical walkthrough, we explore how tokenization, stemming, and vectorization come together in a Flask framework to deliver rapid intent classification.
+### Enterprise Spring Boot Architecture
+In modern backend systems, securing REST APIs with JSON Web Tokens (JWT) and Spring Security ensures robust role-based access control.
 
-### Core Architecture
-1. **Preprocessing**: Removing noise, converting to lowercase, and using NLTK's WordNetLemmatizer.
-2. **Feature Extraction**: Applying Term Frequency-Inverse Document Frequency (TF-IDF) to convert textual queries into numeric feature vectors.
-3. **Classification**: Training a Naive Bayes or Logistic Regression model on intent label pairs.
-
-### Code Sample
-\`\`\`python
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
-
-vectorizer = TfidfVectorizer()
-tfidf_matrix = vectorizer.fit_transform(corpus)
-\`\`\`
+### Core Modules
+1. **Security Config**: Configuring \`SecurityFilterChain\` with stateless session policy.
+2. **JWT Filter**: Intercepting incoming HTTP requests to validate bearer token claims.
+3. **Service & JPA**: Managing complex relational queries with Spring Data JPA.
     `
   },
   {
-    id: "java-spring-boot-architecture",
-    title: "Mastering Java & Spring Boot REST API Architecture",
-    excerpt: "Best practices for designing scalable microservices, dependency injection, JPA ORM persistence, and clean layered architecture.",
-    category: "Backend Development",
-    readTime: "8 min read",
+    id: "weather-ml-forecasting",
+    title: "Predictive Weather Forecasting Using Decision Trees & SVM in Python",
+    excerpt: "Data preprocessing, feature scaling, and comparing supervised machine learning models for real-time web prediction.",
+    category: "Machine Learning",
+    readTime: "6 min read",
     date: "June 2025",
-    tags: ["Java", "Spring Boot", "REST API", "MySQL"],
+    tags: ["Python", "Scikit-Learn", "Machine Learning", "Flask"],
     content: `
-### Why Spring Boot?
-Spring Boot provides opinionated starter dependencies and auto-configuration that enable developers to build production-grade Java applications effortlessly.
+### Predictive Weather Intelligence
+Machine Learning algorithms allow us to detect complex non-linear patterns in meteorological datasets.
 
-### Layered Architecture Design
-- **Controller Layer**: Handles HTTP requests, path variables, and response DTOs.
-- **Service Layer**: Implements core business logic, validations, and transaction boundaries.
-- **Repository Layer**: Extends \`JpaRepository\` to execute clean SQL operations.
+### Model Comparison Pipeline
+- **Preprocessing**: Imputing missing data, scaling features via \`StandardScaler\`.
+- **Decision Tree**: Evaluating decision boundaries for temperature and humidity thresholds.
+- **Support Vector Machine (SVM)**: Applying Radial Basis Function (RBF) kernel for optimal hyper-plane separation.
     `
   },
   {
@@ -428,7 +424,7 @@ Oracle Cloud Infrastructure provides pre-trained AI models that can be consumed 
 
 export const codingStats = {
   leetcode: {
-    username: "EzhilAnand",
+    username: "ezhilanand-LC",
     url: "https://leetcode.com/u/EzhilAnand/",
     solved: "150+",
     ranking: "Top 25%",
@@ -447,6 +443,6 @@ export const codingStats = {
     url: "https://github.com/ezhilanand2002",
     contributionsThisYear: "340+",
     repos: "12",
-    topLanguages: ["Java", "Python", "JavaScript", "HTML/CSS", "SQL"]
+    topLanguages: ["Java", "Python", "JavaScript", "Spring Boot", "SQL"]
   }
 };

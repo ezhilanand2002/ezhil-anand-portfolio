@@ -5,7 +5,7 @@ import { personalInfo, educationTimeline, skillsData, projectsData, certificatio
 export const TerminalModal = ({ isOpen, onClose }) => {
   const [input, setInput] = useState("");
   const [history, setHistory] = useState([
-    { text: "EZHIL OS Interactive Terminal v2.5.0", type: "system" },
+    { text: "EZHIL OS Interactive Terminal v2.6.0 (Updated with Latest Resume)", type: "system" },
     { text: "Type 'help' or 'ls' to list available commands.", type: "system" }
   ]);
   const [historyIndex, setHistoryIndex] = useState(-1);
@@ -36,14 +36,15 @@ export const TerminalModal = ({ isOpen, onClose }) => {
 
       switch (cmd) {
         case "help":
+        case "ls":
           newHistory.push({
             text: `Available commands:
   • help       : Display command list
   • whoami     : About Ezhil Anand V
-  • skills     : View technical skills
-  • projects   : View software projects
+  • skills     : View technical skills (Java, Spring Boot, Node.js, ML)
+  • projects   : View software projects (VolunTrack, Weather ML, Blood Donation)
   • certs      : View industry certifications
-  • edu        : View education details & CGPA
+  • edu        : View education details & CGPA (9.2/10)
   • contact    : Get contact information & links
   • clear      : Clear terminal screen
   • exit       : Close terminal window`,

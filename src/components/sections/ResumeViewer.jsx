@@ -1,6 +1,7 @@
 import React from "react";
 import { FileText, Download, Printer, ExternalLink, Sparkles, CheckCircle2 } from "lucide-react";
 import { personalInfo, educationTimeline, skillsData, projectsData, certificationsData } from "../../data/portfolioData";
+import profilePhotoImg from "../../assets/ezhil_profile.jpg";
 
 export const ResumeViewer = () => {
   const handlePrint = () => {
@@ -19,7 +20,7 @@ export const ResumeViewer = () => {
             Interactive <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Resume Viewer</span>
           </h2>
           <p className="text-sm text-slate-400 max-w-2xl mx-auto">
-            Inspect Ezhil Anand V's resume credentials, academic record, and industry certifications in real-time.
+            Inspect Ezhil Anand V's newly updated resume credentials, academic record, VolunTrack & Weather ML projects, and industry certifications.
           </p>
         </div>
 
@@ -31,7 +32,7 @@ export const ResumeViewer = () => {
             </div>
             <div>
               <h3 className="text-sm font-bold text-slate-100">ATS Optimized Resume Standard</h3>
-              <p className="text-xs text-slate-400 font-mono">Verified 98/100 ATS Score • 2026 Format</p>
+              <p className="text-xs text-slate-400 font-mono">Verified 98/100 ATS Score • Latest 2026 Edition</p>
             </div>
           </div>
 
@@ -71,11 +72,11 @@ export const ResumeViewer = () => {
             <div className="flex items-center gap-5">
               <div className="w-20 h-20 rounded-full border-2 border-cyan-400 p-0.5 overflow-hidden shrink-0 shadow-[0_0_20px_rgba(0,242,254,0.3)]">
                 <img
-                  src={personalInfo.profilePhoto}
+                  src={profilePhotoImg}
                   alt={personalInfo.name}
                   onError={(e) => {
                     e.currentTarget.onerror = null;
-                    e.currentTarget.src = "https://ui-avatars.com/api/?name=Ezhil+Anand+V&background=0F111A&color=00F2FE&size=150";
+                    e.currentTarget.src = "/ezhil_profile.jpg";
                   }}
                   className="w-full h-full object-cover rounded-full"
                 />
@@ -98,7 +99,7 @@ export const ResumeViewer = () => {
                 rel="noreferrer"
                 className="bg-slate-800 text-slate-300 px-3 py-1 rounded hover:text-cyan-400 border border-slate-700"
               >
-                LeetCode: EzhilAnand
+                LeetCode: ezhilanand-LC
               </a>
               <a
                 href={personalInfo.socials.github}
@@ -106,7 +107,7 @@ export const ResumeViewer = () => {
                 rel="noreferrer"
                 className="bg-slate-800 text-slate-300 px-3 py-1 rounded hover:text-cyan-400 border border-slate-700"
               >
-                GitHub: ezhilanand2002
+                GitHub: ezhilanandv
               </a>
               <a
                 href={personalInfo.socials.linkedin}
@@ -154,26 +155,31 @@ export const ResumeViewer = () => {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-slate-300">
               <div><strong className="text-slate-100">Languages:</strong> C, Python, Java</div>
-              <div><strong className="text-slate-100">Frontend:</strong> HTML, CSS, JavaScript, React</div>
-              <div><strong className="text-slate-100">Databases:</strong> MySQL, Oracle MySQL</div>
-              <div><strong className="text-slate-100">Tools:</strong> Git, GitHub, VS Code, Postman</div>
-              <div><strong className="text-slate-100">Soft Skills:</strong> Active Listener, Quick Learner, Adaptable</div>
+              <div><strong className="text-slate-100">Frontend:</strong> HTML, CSS, JavaScript</div>
+              <div><strong className="text-slate-100">Backend:</strong> Spring Boot, Node.js, Express.js</div>
+              <div><strong className="text-slate-100">Databases:</strong> MySQL</div>
+              <div><strong className="text-slate-100">Tools:</strong> GitHub, VS Code</div>
+              <div><strong className="text-slate-100">Soft Skills:</strong> Active Listener, Quick Learner, Adaptable, Flexible, Proactive Thinker</div>
+              <div><strong className="text-slate-100">Languages Spoken:</strong> Hindi, Tamil, English</div>
             </div>
           </div>
 
           {/* Section: Projects */}
-          <div className="space-y-3">
+          <div className="space-y-4">
             <h3 className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-widest border-b border-slate-800/80 pb-1">
               PROJECTS
             </h3>
-            <div className="space-y-3 text-xs">
+            <div className="space-y-4 text-xs">
               {projectsData.map((proj, idx) => (
-                <div key={idx} className="space-y-1">
-                  <div className="flex items-center justify-between">
-                    <span className="font-bold text-slate-100">{idx + 1}. {proj.title}</span>
-                    <span className="font-mono text-cyan-400 text-[11px]">{proj.technologies.slice(0, 4).join(", ")}</span>
+                <div key={idx} className="space-y-1 bg-[#08090E] p-3.5 rounded-xl border border-slate-800">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <span className="font-bold text-slate-100 text-sm">{idx + 1}. {proj.title}</span>
+                    <span className="font-mono text-cyan-400 text-[11px] bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/20">{proj.category}</span>
                   </div>
-                  <p className="text-slate-400 pl-4">{proj.shortDescription}</p>
+                  <p className="text-slate-300 pt-1 leading-relaxed">{proj.fullDescription}</p>
+                  <p className="text-slate-400 text-[11px] font-mono pt-1">
+                    <strong className="text-slate-200">Technologies Used:</strong> {proj.technologies.join(", ")}
+                  </p>
                 </div>
               ))}
             </div>
@@ -192,6 +198,16 @@ export const ResumeViewer = () => {
                 </li>
               ))}
             </ul>
+          </div>
+
+          {/* Section: Internship */}
+          <div className="space-y-2">
+            <h3 className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-widest border-b border-slate-800/80 pb-1">
+              INTERNSHIP
+            </h3>
+            <p className="text-xs text-slate-300">
+              • <strong>Java Full Stack Developer Intern</strong> – EduSkills (AICTE), Jan–Mar 2026.
+            </p>
           </div>
         </div>
       </div>
