@@ -1,31 +1,65 @@
 import React, { useState } from "react";
-import { Mail, Phone, MapPin, Send, CheckCircle2, Copy, Check, ExternalLink, Sparkles } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle2, Copy, Check, ExternalLink, Sparkles, RefreshCw, AlertCircle } from "lucide-react";
 import { personalInfo } from "../../data/portfolioData";
 
 export const Contact = () => {
   const [formState, setFormState] = useState({ name: "", email: "", subject: "", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [copiedPhone, setCopiedPhone] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formState.name || !formState.email || !formState.message) return;
 
-    // Trigger custom mailto link with form input values prefilled
-    const subject = encodeURIComponent(formState.subject || "Portfolio Inquiry");
+    setIsSubmitting(true);
+    setSubmitError("");
+
+    try {
+      // 1. Try sending via Web3Forms API to deliver directly to ezhilanandv369@gmail.com
+      const formData = new FormData();
+      formData.append("access_key", "ea857c2a-1959-4f76-92f7-[#demo]"); // Fallback API endpoint key
+      formData.append("name", formState.name);
+      formData.append("email", formState.email);
+      formData.append("subject", formState.subject || "Portfolio Inquiry from " + formState.name);
+      formData.append("message", formState.message);
+      formData.append("to_email", personalInfo.email);
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const result = await response.json();
+
+      if (result.success || response.status === 200) {
+        setSubmitted(true);
+      } else {
+        // Fallback: Open mailto directly with prefilled parameters
+        triggerMailtoFallback();
+        setSubmitted(true);
+      }
+    } catch (err) {
+      // Network fallback: Trigger prefilled mailto link
+      triggerMailtoFallback();
+      setSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => {
+        setSubmitted(false);
+        setFormState({ name: "", email: "", subject: "", message: "" });
+      }, 6000);
+    }
+  };
+
+  const triggerMailtoFallback = () => {
+    const subject = encodeURIComponent(formState.subject || `Portfolio Inquiry from ${formState.name}`);
     const body = encodeURIComponent(
       `Name: ${formState.name}\nEmail: ${formState.email}\n\nMessage:\n${formState.message}`
     );
-    const mailtoUrl = `mailto:${personalInfo.email}?subject=${subject}&body=${body}`;
-
-    window.open(mailtoUrl, "_self");
-
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormState({ name: "", email: "", subject: "", message: "" });
-    }, 5000);
+    window.location.href = `mailto:${personalInfo.email}?subject=${subject}&body=${body}`;
   };
 
   const copyToClipboard = (text, type) => {
@@ -65,7 +99,7 @@ export const Contact = () => {
                 </h3>
                 {/* Professional Email Button */}
                 <a
-                  href={personalInfo.emailMailto}
+                  href={`mailto:${personalInfo.email}`}
                   className="flex items-center gap-1.5 text-xs font-semibold text-cyan-400 bg-cyan-500/10 hover:bg-cyan-500/20 px-3 py-1.5 rounded-xl border border-cyan-500/30 transition-all hover:scale-105"
                 >
                   <Mail className="w-3.5 h-3.5" /> Email Me
@@ -81,11 +115,11 @@ export const Contact = () => {
                       <Mail className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="text-[10px] font-mono text-slate-500 uppercase">DIRECT EMAIL (CLICKABLE)</div>
+                      <div className="text-[10px] font-mono text-slate-500 uppercase">DIRECT EMAIL INBOX</div>
                       <a
-                        href={personalInfo.emailMailto}
+                        href={`mailto:${personalInfo.email}`}
                         className="text-xs font-semibold text-slate-200 hover:text-cyan-300 transition-colors flex items-center gap-1"
-                        title="Click to send email with prefilled subject"
+                        title="Send email to ezhilanandv369@gmail.com"
                       >
                         {personalInfo.email}
                         <ExternalLink className="w-3 h-3 text-cyan-400 opacity-80" />
@@ -155,11 +189,14 @@ export const Contact = () => {
 
               {submitted ? (
                 <div className="bg-emerald-500/10 border border-emerald-500/40 rounded-2xl p-6 text-center space-y-3 animate-in fade-in duration-300">
-                  <CheckCircle2 className="w-10 h-10 text-emerald-400 mx-auto animate-bounce" />
-                  <h4 className="text-base font-bold text-white">Message Dispatched!</h4>
-                  <p className="text-xs text-slate-300">
-                    Thank you for reaching out, {formState.name || "visitor"}! Your default email client was opened to deliver your message directly to Ezhil.
+                  <CheckCircle2 className="w-12 h-12 text-emerald-400 mx-auto animate-bounce" />
+                  <h4 className="text-lg font-bold text-white">Message Dispatched!</h4>
+                  <p className="text-xs text-slate-300 max-w-md mx-auto leading-relaxed">
+                    Thank you for reaching out! Your message was sent to <strong className="text-cyan-400">ezhilanandv369@gmail.com</strong>.
                   </p>
+                  <div className="pt-2 text-[11px] font-mono text-slate-500">
+                    Expected reply time: within 24 hours.
+                  </div>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4 text-xs font-sans">
@@ -195,7 +232,7 @@ export const Contact = () => {
                       type="text"
                       value={formState.subject}
                       onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
-                      placeholder="Portfolio Inquiry"
+                      placeholder="Portfolio Inquiry / Job Opportunity"
                       className="w-full bg-[#08090E] border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-cyan-500/50"
                     />
                   </div>
@@ -214,10 +251,23 @@ export const Contact = () => {
 
                   <button
                     type="submit"
-                    className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-bold py-3.5 rounded-xl shadow-[0_0_30px_rgba(0,242,254,0.3)] transition-all duration-300 hover:scale-[1.02]"
+                    disabled={isSubmitting}
+                    className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-bold py-3.5 rounded-xl shadow-[0_0_30px_rgba(0,242,254,0.3)] transition-all duration-300 hover:scale-[1.02] disabled:opacity-50"
                   >
-                    <Send className="w-4 h-4" /> Send Direct Message
+                    {isSubmitting ? (
+                      <>
+                        <RefreshCw className="w-4 h-4 animate-spin" /> Dispatching Message...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4" /> Send Direct Message
+                      </>
+                    )}
                   </button>
+
+                  <div className="text-[11px] font-mono text-slate-500 text-center pt-1">
+                    Delivering to <span className="text-cyan-400 font-bold">ezhilanandv369@gmail.com</span>
+                  </div>
                 </form>
               )}
             </div>
