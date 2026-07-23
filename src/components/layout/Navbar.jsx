@@ -33,7 +33,6 @@ export const Navbar = ({
       const sections = [
         "hero",
         "about",
-        "skills",
         "projects",
         "experience",
         "certifications",
@@ -65,7 +64,6 @@ export const Navbar = ({
   const navItems = [
     { name: "Home", href: "#hero", id: "hero" },
     { name: "About", href: "#about", id: "about" },
-    { name: "Skills", href: "#skills", id: "skills" },
     { name: "Projects", href: "#projects", id: "projects" },
     { name: "Experience", href: "#experience", id: "experience" },
     { name: "Certifications", href: "#certifications", id: "certifications" },
