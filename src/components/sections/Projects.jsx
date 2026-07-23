@@ -5,14 +5,6 @@ import { ProjectModal } from "../ui/ProjectModal";
 
 export const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
-  const [activeFilter, setActiveFilter] = useState("All");
-
-  const filterOptions = ["All", "AI & Web App", "Database & Backend", "Desktop & Data System"];
-
-  const filteredProjects =
-    activeFilter === "All"
-      ? projectsData
-      : projectsData.filter((p) => p.category === activeFilter);
 
   return (
     <section id="projects" className="py-24 relative z-10 font-sans border-t border-slate-800/60">
@@ -26,30 +18,13 @@ export const Projects = () => {
             Engineering Projects & <span className="bg-gradient-to-r from-cyan-400 to-indigo-400 bg-clip-text text-transparent">AI Systems</span>
           </h2>
           <p className="text-sm text-slate-400 max-w-2xl mx-auto">
-            Practical software projects built leveraging Python NLP, Oracle MySQL databases, Tkinter GUI, and modern full-stack web technologies.
+            Practical software projects built leveraging Java Spring Boot, MySQL databases, Python Flask, Machine Learning, and modern full-stack web technologies.
           </p>
-        </div>
-
-        {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
-          {filterOptions.map((filter) => (
-            <button
-              key={filter}
-              onClick={() => setActiveFilter(filter)}
-              className={`px-4 py-2 text-xs font-semibold rounded-full transition-all duration-300 border ${
-                activeFilter === filter
-                  ? "bg-gradient-to-r from-cyan-500 to-indigo-600 text-black border-cyan-400 shadow-[0_0_20px_rgba(0,242,254,0.3)] scale-105"
-                  : "bg-[#0F111A] text-slate-400 border-slate-800 hover:text-white hover:border-slate-700"
-              }`}
-            >
-              {filter}
-            </button>
-          ))}
         </div>
 
         {/* Projects Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project) => (
+          {projectsData.map((project) => (
             <div
               key={project.id}
               className="group bg-[#0F111A]/90 border border-slate-800/90 hover:border-cyan-500/40 rounded-3xl overflow-hidden backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,242,254,0.15)] flex flex-col"

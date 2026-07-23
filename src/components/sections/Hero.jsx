@@ -13,7 +13,8 @@ import {
   Award,
   Terminal,
   Download,
-  Eye
+  Eye,
+  MapPin
 } from "lucide-react";
 import { personalInfo } from "../../data/portfolioData";
 import profilePhotoImg from "../../assets/ezhil_profile.jpg";
@@ -219,8 +220,8 @@ export const Hero = () => {
 
                   <h3 className="mt-4 text-2xl font-extrabold text-white tracking-tight">{personalInfo.name}</h3>
                   <p className="text-xs text-cyan-400 font-mono mt-1 font-semibold">B.E. Computer Science (2023-2027)</p>
-                  <p className="text-xs text-slate-400 mt-1 flex items-center justify-center gap-1">
-                    <span>📍</span> Tirupattur, Tamil Nadu
+                  <p className="text-xs text-slate-400 mt-1 flex items-center justify-center gap-1 font-mono">
+                    <MapPin className="w-3.5 h-3.5 text-cyan-400" /> Tirupattur, Tamil Nadu
                   </p>
                 </div>
 
